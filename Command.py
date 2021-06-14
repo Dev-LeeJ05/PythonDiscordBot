@@ -39,12 +39,18 @@ async def on_message(message):
     bad.append(message_content.find("ㅅㅍ"))
     bad.append(message_content.find("씨팔"))
     bad.append(message_content.find("싸발"))
+    bad.append(message_content.find("찌발"))
+    bad.append(message_content.find("ㅈㄲ"))
+    bad.append(message_content.find("ㅗ"))
+    bad.append(message_content.find("찌"))
+    bad.append(message_content.find("씨"))
 
     for index in range(0,len(bad)):
         print(bad[index])
         if bad[index] >= 0:
-            await message.channel.send("No KKap")
+            print(message)
             await message.delete()
+            await message.channel.send("No KKap")
     await bot.process_commands(message)
 
 @bot.command(name='주사위')

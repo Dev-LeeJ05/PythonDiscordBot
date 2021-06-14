@@ -18,15 +18,16 @@ async def on_ready() :
 @bot.command(name="영재운동해")
 async def exercise(ctx):
     exers =  ["스쿼트","팔굽혀펴기","버피", "턱걸이", "사레레", "윗몸일으키기"]
-    exer_cnt = random.randint(0,len(exers)/2)
+    exer_cnt = random.randint(0,(len(exers)/2)+1)
     ex_cnt_set = ""
     for i in range(0,exer_cnt+1):
-        exers_cnt = random.randint(0,len(exers))
-        sets = random.randint(1, 5)
-        count = random.randint(10,15)
+        exers_cnt = random.randint(0,len(exers)-1)
+        sets = random.randint(1, 7)
+        count = random.randint(10,20)
         ex = exers[exers_cnt]
         exers.remove(ex)
         ex_cnt_set = ex_cnt_set+f"**{i+1}번**. ``{ex}``를 {count}개씩 {sets}세트 하면 되겠다!\n"  
+    
     embed = discord.Embed(title=f"오늘은 {exer_cnt+1}개의 종류를 하면 되겠다!",description=ex_cnt_set,color=0xffffff)
     await ctx.send(embed=embed)
 
