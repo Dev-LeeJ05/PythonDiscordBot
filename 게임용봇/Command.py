@@ -2,10 +2,7 @@ import discord, random,datetime
 from discord.ext import commands
 import asyncio,json
 
-with open('token.json') as json_file:
-    json_data = json.load(json_file)
-token = json_data["token"]
-
+token = "NTIwOTQ5MDkxNDAwOTQxNTg4.XAvBpg.C4Ia38nlOJJpkRgbwLMvh3XvUtY"
 client = discord.Client()
 bot = commands.Bot(command_prefix = 'm ', help_command = None)
 
@@ -23,13 +20,7 @@ async def on_message(message):
         await message.channel.send("반가워!")
     if message.content.startswith("영재는?"):
         await message.channel.send("꾸익꾸익!")
-
-
-    #if message.content.startswith(".") :
-    #    commander = discord.utils.get(message.guild.roles, name = "chap")
-    #    await message.delete()
-    #    await message.channel.send("{} 소환술!".format(commander.mention))
-
+    
     message_content = message.content
     bad = []
     bad.append(message_content.find("시팔"))

@@ -3,9 +3,7 @@ from discord.ext import commands
 import youtube_dl
 import os,json
 
-with open('token.json') as json_file:
-    json_data = json.load(json_file)
-token = json_data["token"]
+token = "NTIwOTQ5MDkxNDAwOTQxNTg4.XAvBpg.C4Ia38nlOJJpkRgbwLMvh3XvUtY"
 
 client = commands.Bot(command_prefix="m ")
 
